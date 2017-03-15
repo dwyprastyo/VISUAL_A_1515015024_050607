@@ -70,7 +70,15 @@ public class LatihanBorderLayout extends javax.swing.JFrame {
         panelgaleri = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
+        panelfoto1 = new javax.swing.JPanel();
+        jLabel33 = new javax.swing.JLabel();
+        panelfoto2 = new javax.swing.JPanel();
         jLabel28 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        panelfoto3 = new javax.swing.JPanel();
+        jLabel34 = new javax.swing.JLabel();
         panelinformasi = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
@@ -491,10 +499,10 @@ public class LatihanBorderLayout extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(274, 274, 274)
                 .addComponent(jLabel25)
-                .addGap(290, 290, 290))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -504,7 +512,81 @@ public class LatihanBorderLayout extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel28.setIcon(new javax.swing.ImageIcon("C:\\Users\\prastyo\\Documents\\NetBeansProjects\\VISUAL_A_1515015024_050607\\src\\tugas3gambar\\123.jpg")); // NOI18N
+        jLabel33.setIcon(new javax.swing.ImageIcon("C:\\Users\\prastyo\\Documents\\NetBeansProjects\\VISUAL_A_1515015024_050607\\src\\tugas3gambar\\123.jpg")); // NOI18N
+
+        javax.swing.GroupLayout panelfoto1Layout = new javax.swing.GroupLayout(panelfoto1);
+        panelfoto1.setLayout(panelfoto1Layout);
+        panelfoto1Layout.setHorizontalGroup(
+            panelfoto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelfoto1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel33)
+                .addContainerGap())
+        );
+        panelfoto1Layout.setVerticalGroup(
+            panelfoto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jLabel28.setIcon(new javax.swing.ImageIcon("C:\\Users\\prastyo\\Documents\\NetBeansProjects\\VISUAL_A_1515015024_050607\\src\\tugas3gambar\\jalan2nya_170225_0036.jpg")); // NOI18N
+
+        javax.swing.GroupLayout panelfoto2Layout = new javax.swing.GroupLayout(panelfoto2);
+        panelfoto2.setLayout(panelfoto2Layout);
+        panelfoto2Layout.setHorizontalGroup(
+            panelfoto2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelfoto2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        panelfoto2Layout.setVerticalGroup(
+            panelfoto2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelfoto2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel28)
+                .addGap(19, 19, 19))
+        );
+
+        jButton1.setText("Photo 1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Photo 2");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setText("Photo 3");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jLabel34.setIcon(new javax.swing.ImageIcon("C:\\Users\\prastyo\\Documents\\NetBeansProjects\\VISUAL_A_1515015024_050607\\src\\tugas3gambar\\Samboja 7=9-2_170225_0021.jpg")); // NOI18N
+
+        javax.swing.GroupLayout panelfoto3Layout = new javax.swing.GroupLayout(panelfoto3);
+        panelfoto3.setLayout(panelfoto3Layout);
+        panelfoto3Layout.setHorizontalGroup(
+            panelfoto3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 284, Short.MAX_VALUE)
+            .addGroup(panelfoto3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(panelfoto3Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 263, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+        panelfoto3Layout.setVerticalGroup(
+            panelfoto3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 198, Short.MAX_VALUE)
+            .addGroup(panelfoto3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jLabel34, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout panelgaleriLayout = new javax.swing.GroupLayout(panelgaleri);
         panelgaleri.setLayout(panelgaleriLayout);
@@ -512,17 +594,54 @@ public class LatihanBorderLayout extends javax.swing.JFrame {
             panelgaleriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(panelgaleriLayout.createSequentialGroup()
-                .addGap(198, 198, 198)
-                .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(227, Short.MAX_VALUE))
+                .addGap(210, 210, 210)
+                .addComponent(jButton1)
+                .addGap(18, 18, 18)
+                .addComponent(jButton2)
+                .addGap(18, 18, 18)
+                .addComponent(jButton3)
+                .addContainerGap(236, Short.MAX_VALUE))
+            .addGroup(panelgaleriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelgaleriLayout.createSequentialGroup()
+                    .addContainerGap(183, Short.MAX_VALUE)
+                    .addComponent(panelfoto1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(222, Short.MAX_VALUE)))
+            .addGroup(panelgaleriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelgaleriLayout.createSequentialGroup()
+                    .addContainerGap(185, Short.MAX_VALUE)
+                    .addComponent(panelfoto2, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(224, Short.MAX_VALUE)))
+            .addGroup(panelgaleriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelgaleriLayout.createSequentialGroup()
+                    .addContainerGap(183, Short.MAX_VALUE)
+                    .addComponent(panelfoto3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(222, Short.MAX_VALUE)))
         );
         panelgaleriLayout.setVerticalGroup(
             panelgaleriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelgaleriLayout.createSequentialGroup()
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(68, 68, 68))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 212, Short.MAX_VALUE)
+                .addGroup(panelgaleriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2)
+                    .addComponent(jButton3))
+                .addGap(34, 34, 34))
+            .addGroup(panelgaleriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelgaleriLayout.createSequentialGroup()
+                    .addContainerGap(57, Short.MAX_VALUE)
+                    .addComponent(panelfoto1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(70, Short.MAX_VALUE)))
+            .addGroup(panelgaleriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelgaleriLayout.createSequentialGroup()
+                    .addContainerGap(53, Short.MAX_VALUE)
+                    .addComponent(panelfoto2, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(70, Short.MAX_VALUE)))
+            .addGroup(panelgaleriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelgaleriLayout.createSequentialGroup()
+                    .addContainerGap(53, Short.MAX_VALUE)
+                    .addComponent(panelfoto3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(70, Short.MAX_VALUE)))
         );
 
         panelinformasi.setBackground(new java.awt.Color(255, 204, 153));
@@ -657,7 +776,7 @@ public class LatihanBorderLayout extends javax.swing.JFrame {
                     .addComponent(panelprofil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGroup(JtengahLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JtengahLayout.createSequentialGroup()
-                    .addContainerGap(140, Short.MAX_VALUE)
+                    .addContainerGap(139, Short.MAX_VALUE)
                     .addComponent(panelgaleri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(23, 23, 23)))
             .addGroup(JtengahLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -758,6 +877,22 @@ public class LatihanBorderLayout extends javax.swing.JFrame {
     panelinformasi.setVisible(false);
     }//GEN-LAST:event_btnaboutActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       panelfoto2.setVisible(false);
+       panelfoto1.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        panelfoto2.setVisible(true);
+        panelfoto1.setVisible(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        panelfoto2.setVisible(false);
+        panelfoto1.setVisible(false);
+        panelfoto3.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -803,6 +938,9 @@ public class LatihanBorderLayout extends javax.swing.JFrame {
     private javax.swing.JButton btnprofil;
     private javax.swing.JPanel jAtas;
     private javax.swing.JPanel jBawah;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JPanel jKiri;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -830,6 +968,8 @@ public class LatihanBorderLayout extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -852,6 +992,9 @@ public class LatihanBorderLayout extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel panelabout;
+    private javax.swing.JPanel panelfoto1;
+    private javax.swing.JPanel panelfoto2;
+    private javax.swing.JPanel panelfoto3;
     private javax.swing.JPanel panelgaleri;
     private javax.swing.JPanel panelhome;
     private javax.swing.JPanel panelinformasi;
