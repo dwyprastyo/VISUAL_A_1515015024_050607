@@ -103,6 +103,7 @@ public class LatihanBorderLayout extends javax.swing.JFrame {
         jMenu5.setText("jMenu5");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setUndecorated(true);
         setResizable(false);
 
         jBawah.setBackground(new java.awt.Color(153, 0, 0));
