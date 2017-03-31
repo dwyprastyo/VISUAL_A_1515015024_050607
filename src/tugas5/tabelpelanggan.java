@@ -5,6 +5,7 @@
  */
 package tugas5;
 
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -51,15 +52,20 @@ private DefaultTableModel model;
         jPanel4 = new javax.swing.JPanel();
         tambah = new javax.swing.JButton();
         update = new javax.swing.JButton();
-        lagi = new javax.swing.JButton();
         hapus = new javax.swing.JButton();
         keluar = new javax.swing.JButton();
+        simpan = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setUndecorated(true);
         addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
                 formComponentShown(evt);
+            }
+        });
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
             }
         });
 
@@ -175,13 +181,6 @@ private DefaultTableModel model;
             }
         });
 
-        lagi.setText("Ulang");
-        lagi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lagiActionPerformed(evt);
-            }
-        });
-
         hapus.setText("Hapus");
         hapus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -196,6 +195,13 @@ private DefaultTableModel model;
             }
         });
 
+        simpan.setText("Simpan");
+        simpan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                simpanActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -204,10 +210,10 @@ private DefaultTableModel model;
                 .addContainerGap()
                 .addComponent(tambah)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(simpan)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(update)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lagi, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(hapus)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(keluar, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -220,9 +226,9 @@ private DefaultTableModel model;
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tambah)
                     .addComponent(update)
-                    .addComponent(lagi)
                     .addComponent(hapus)
-                    .addComponent(keluar))
+                    .addComponent(keluar)
+                    .addComponent(simpan))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -275,30 +281,40 @@ private DefaultTableModel model;
     }// </editor-fold>//GEN-END:initComponents
 
     private void tambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambahActionPerformed
-    Object[]data=new Object[3];
-    data[0]=nama.getText();
-    data[1]=telepon.getText();
-    data[2]=kota.getSelectedItem().toString();
-    model.addRow(data);
+        nama.setEditable(true);
+        telepon.setEditable(true);
+        kota.setEnabled(true);
+        simpan.setEnabled(true);
+        update.setEnabled(true);
+        hapus.setEnabled(true);
+        
+        nama.requestFocus();
     }//GEN-LAST:event_tambahActionPerformed
 
     private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
-    int baris = jTable1.getSelectedRow();
-    jTable1.setValueAt(nama.getText(),baris,0);
-    jTable1.setValueAt(telepon.getText(),baris,1);
-    jTable1.setValueAt(kota.getSelectedItem(),baris,2);
+        try {
+            int baris = jTable1.getSelectedRow();
+            jTable1.setValueAt(nama.getText(),baris,0);
+            jTable1.setValueAt(telepon.getText(),baris,1);
+            jTable1.setValueAt(kota.getSelectedItem(),baris,2);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Data Tidak dipilih !!!","Warning !!!!",JOptionPane.INFORMATION_MESSAGE);
+        }
+        
     }//GEN-LAST:event_updateActionPerformed
 
-    private void lagiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lagiActionPerformed
-    nama.setText("");
-    telepon.setText("");
-    kota.setSelectedItem("");
-    nama.requestFocus();
-    }//GEN-LAST:event_lagiActionPerformed
-
     private void hapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusActionPerformed
-    int baris = jTable1.getSelectedRow();
-    model.removeRow(baris);
+    
+        try {
+            int baris = jTable1.getSelectedRow();
+            model.removeRow(baris); 
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Data Tidak dipilih !!!","Warning !!!!",JOptionPane.INFORMATION_MESSAGE);
+        }
+        nama.setText("");
+        telepon.setText("");
+        kota.setSelectedItem(null);
     }//GEN-LAST:event_hapusActionPerformed
 
     private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
@@ -323,6 +339,36 @@ private DefaultTableModel model;
     private void keluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keluarActionPerformed
     System.exit(0);
     }//GEN-LAST:event_keluarActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        nama.setEditable(false);
+        telepon.setEditable(false);
+        kota.setEnabled(false);
+        simpan.setEnabled(false);
+        update.setEnabled(false);
+        hapus.setEnabled(false);
+    }//GEN-LAST:event_formWindowOpened
+
+    private void simpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanActionPerformed
+     if(nama.getText().equals("") && telepon.getText().equals(""))
+     {
+           JOptionPane.showMessageDialog(null, "Data Belum Lengkap","Warning !!!!",JOptionPane.INFORMATION_MESSAGE);
+           nama.requestFocus();
+     }else
+     {
+                Object[]data=new Object[3];
+                data[0]=nama.getText();
+                data[1]=telepon.getText();
+                data[2]=kota.getSelectedItem().toString();
+                model.addRow(data);
+    
+                simpan.setEnabled(false);
+                nama.setText("");
+                telepon.setText("");
+                kota.setSelectedItem(null);
+                
+     }
+    }//GEN-LAST:event_simpanActionPerformed
 
     /**
      * @param args the command line arguments
@@ -373,8 +419,8 @@ private DefaultTableModel model;
     private javax.swing.JTable jTable1;
     private javax.swing.JButton keluar;
     private javax.swing.JComboBox<String> kota;
-    private javax.swing.JButton lagi;
     private javax.swing.JTextField nama;
+    private javax.swing.JButton simpan;
     private javax.swing.JButton tambah;
     private javax.swing.JTextField telepon;
     private javax.swing.JButton update;
