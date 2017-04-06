@@ -12,21 +12,21 @@ import javax.swing.table.DefaultTableModel;
  * @author prastyo
  */
 public class FormDataBuku extends javax.swing.JFrame {
-    private DefaultTableModel model;
-    private Connection con = koneksi.getConnection();
-    private Statement stt;
-    private ResultSet rss;
+    private DefaultTableModel model; //untuk membuat model pada tabel
+    private Connection con = koneksi.getConnection(); //untuk mengambil koneksi
+    private Statement stt; //untuk mengeksekusi query database
+    private ResultSet rss; //untuk menampung data dari database
     
-    private int baris;
-    private boolean cekbuku=true;
+    private int baris; //untuk mendeklarasikan variabel baris yang bertipe integer pada table
+    private boolean cekbuku=true; //untuk mendeklarasikan variabel cekbuku yang nantinya akan digunakan untuk proses validasi
     /**
      * Creates new form FormDataBuku
      */
-    public FormDataBuku() {
-        initComponents();
+    public FormDataBuku() { //method dari Form yang dibuat
+        initComponents(); 
     }
-    private void InitTable(){
-        model = new DefaultTableModel();
+    private void InitTable(){ //method untuk menghubungkan inputan agar masuk ke table 
+        model = new DefaultTableModel(); 
         model.addColumn("ID");
         model.addColumn("JUDUL");
         model.addColumn("PENULIS");
@@ -34,14 +34,14 @@ public class FormDataBuku extends javax.swing.JFrame {
         
         jTable1.setModel(model);
     }
-    private void TampilData(){
+    private void TampilData(){ //method yang digunakan untuk menampilkan isi tabel dari database
         try {
-            String sql = "SELECT * FROM buku";
+            String sql = "SELECT * FROM buku"; //query untuk mengambil dan menampilkan isi tabel dari database
             stt = con.createStatement();
             rss = stt.executeQuery(sql);
             while(rss.next()){
                 Object[] o = new Object[4];
-                o[0] = rss.getInt("id");
+                o[0] = rss.getInt("id"); 
                 o[1] = rss.getString("judul");
                 o[2] = rss.getString("penulis");
                 o[3] = rss.getString("harga");
@@ -52,10 +52,10 @@ public class FormDataBuku extends javax.swing.JFrame {
         }
     }
     
-    private void TambahData(String judul, String penulis, String harga){
+    private void TambahData(String judul, String penulis, String harga){ //method yang digunakan untuk menambahkan data
         try {
             String sql = 
-                    "INSERT INTO buku VALUES (NULL,'"+judul+"','"+penulis+"',"+harga+")";
+                    "INSERT INTO buku VALUES (NULL,'"+judul+"','"+penulis+"',"+harga+")"; //query untuk menambahkan data di tabel yang ada di database
             stt = con.createStatement();
             stt.executeUpdate(sql);
             
@@ -64,11 +64,11 @@ public class FormDataBuku extends javax.swing.JFrame {
         }
     }
     
-    private void HapusData(String id,int baris){
+    private void HapusData(String id,int baris){ //method yang digunakan untuk menghapus data
         try {
             
             String sqldelete = 
-                    "DELETE FROM buku WHERE id="+id+"";
+                    "DELETE FROM buku WHERE id="+id+""; //query untuk menghapus data pada tabel yang ada di database
             stt = con.createStatement();
             stt.executeUpdate(sqldelete);
             model.removeRow(baris);
@@ -77,7 +77,7 @@ public class FormDataBuku extends javax.swing.JFrame {
         }
     }
     
-    private void UbahData(String judul,String penulis, String harga, String id){
+    private void UbahData(String judul,String penulis, String harga, String id){ //method yang digunakan untuk mengupdate data
         try {
             
             String sql = "UPDATE buku SET "
@@ -93,7 +93,7 @@ public class FormDataBuku extends javax.swing.JFrame {
         }
     }
     
-     private void cariData(){
+     private void cariData(){ //method yang digunakan untuk mencari data
         try {
             String sql = "SELECT * FROM buku where judul='"+cari.getText()+"'|| penulis='"+cari.getText()+"'|| harga='"+cari.getText()+"'";
             stt = con.createStatement();
@@ -111,7 +111,7 @@ public class FormDataBuku extends javax.swing.JFrame {
         }
     }
      
-    private void validasi (String judul, String penulis, String harga){
+    private void validasi (String judul, String penulis, String harga){ //method yang digunakan untuk validasi data yang diinputkan agar tidak ada data yang sama
         try {
             String sql = "SELECT * FROM buku";
             stt = con.createStatement();
@@ -459,7 +459,8 @@ public class FormDataBuku extends javax.swing.JFrame {
     }//GEN-LAST:event_formComponentShown
 
     private void simpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanActionPerformed
-     if(txtJudul.getText().equals("") && txtHarga.getText().equals(""))
+        //action untuk tombol simpan 
+        if(txtJudul.getText().equals("") && txtHarga.getText().equals(""))
      {
            JOptionPane.showMessageDialog(null, "Data Belum Lengkap","Warning !!!!",JOptionPane.INFORMATION_MESSAGE);
            txtJudul.requestFocus();
@@ -476,10 +477,12 @@ public class FormDataBuku extends javax.swing.JFrame {
     }//GEN-LAST:event_simpanActionPerformed
 
     private void keluarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_keluarMouseClicked
+    //action untuk tombol keluar
         System.exit(0);        // TODO add your handling code here:
     }//GEN-LAST:event_keluarMouseClicked
 
     private void hapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusActionPerformed
+    //action untuk tombol hapus
         try {
         int baris = jTable1.getSelectedRow();
         String id = jTable1.getValueAt(baris, 0).toString();
@@ -490,7 +493,7 @@ public class FormDataBuku extends javax.swing.JFrame {
     }//GEN-LAST:event_hapusActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
-        
+    //action untuk mengisi fild teks ketika mengklik atau memilih data pada tabel
         int baris = jTable1.getSelectedRow();
         
         String judul=jTable1.getValueAt(baris,1).toString();
@@ -509,6 +512,7 @@ public class FormDataBuku extends javax.swing.JFrame {
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void ubahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ubahActionPerformed
+    //action untuk tombol mengubah data    
         try {
         int baris = jTable1.getSelectedRow();
         
@@ -541,6 +545,7 @@ public class FormDataBuku extends javax.swing.JFrame {
     }//GEN-LAST:event_cariActionPerformed
 
     private void btncariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncariActionPerformed
+    //action untuk tombol cari data
         model.getDataVector().removeAllElements();
         model.fireTableDataChanged();
         cariData();        
@@ -554,6 +559,7 @@ public class FormDataBuku extends javax.swing.JFrame {
     }//GEN-LAST:event_cariMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    //action untuk menampilkan kembali data yang ada di tabel pada database
         InitTable();
         TampilData();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
